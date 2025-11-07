@@ -15,7 +15,7 @@ class BreaklessListsProcessor(Preprocessor):
     def __init__(self, parser):
         super().__init__(parser)
         self.tab_length = parser.md.tab_length
-        self.LI_RE = re.compile(r'^[ ]*((\d+\.)|[*+-])[ ]+.*')
+        self.LI_RE = re.compile(r'^[ \t]*>?[ \t]*((\d+\.)|[*+-])[ \t]+.*$')
 
     def run(self, lines):
         previous_was_li = False
